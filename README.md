@@ -1,30 +1,24 @@
 # Text Translator using Google Translation 
-It is a text translater which translate any text of any language to any other language supported by google at free of cost. Developed using Nodejs express, this app exposes a post REST API for translating the text. The format of data to be send via the API is defined below. You just have to call the API and API will give you the desired results. It will through error as well for any of the typo error or some logicals errors like you want to convert a text from english to japenese but the text has been given in marathi then it will through an error. All the error handling has been done at the application level. 
+مترجم نصوص يترجم أي نص من أي لغة إلى أي لغة أخرى يدعمها جوجل مجانًا.
+تم تطوير هذا التطبيق باستخدام Nodejs Express، ويعرض واجهة برمجة تطبيقات REST بعد الترجمة لترجمة النص. 
+يتم تعريف تنسيق البيانات التي سيتم إرسالها عبر واجهة برمجة التطبيقات.
+فقط قم الاتصال بواجهة برمجة التطبيقات وستعطيك واجهة برمجة التطبيقات النتائج المطلوبة
 
-This app is using MongoDB as it's caching database, so if you query for translation that was once asked by you before it will just use it's cache memory to answer your query thus reducing it's response time.
+يستخدم هذا التطبيق MongoDB كقاعدة بيانات للتخزين المؤقت، لذلك إذا استفسرت عن ترجمة تم طلبها منك من قبل، فسيستخدم ذاكرة التخزين المؤقت للإجابة على استعلامك وبالتالي تقليل وقت الاستجابة.
 
 ---
-## Requirements
+## المتطلبات
 
-For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
+من أجل التطوير، ستحتاج إلى Node.js وحزمة Node العالمية.
 
-### Node
-- #### Node installation on Windows
+- #### تثبيت Node
 
-  Just go on [official Node.js website](https://nodejs.org/) and download the installer.
-Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
-
-- #### Node installation on Ubuntu
-
-  You can install nodejs and npm easily with apt install, just run the following commands.
+يمكنك تثبيت nodejs وnpm بسهولة باستخدام apt install، فقط قم بتشغيل الأوامر التالية.
 
       $ sudo apt install nodejs
       $ sudo apt install npm
 
-- #### Other Operating Systems
-  You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
-
-If the installation was successful, you should be able to run the following command.
+- #### قم بتشغيل الأمر التالي.
 
     $ node --version
     v8.11.3
@@ -32,38 +26,22 @@ If the installation was successful, you should be able to run the following comm
     $ npm --version
     6.1.0
 
-If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
 
-    $ npm install npm -g
-
-###
 ---
 
-## Install
 
-#### Just clone the repository
 
-```
-git clone https://github.com/mostlypanda/Text-Translator-using-Nodejs.git
-```
-
-#### Now heading towards the code directory    
-    
-```  
-cd Text-Translator-using-Nodejs
-```
-
-#### Install all the dependencies    
+#### تثبيت الاعتماديات 
 
 ```
 npm install
 ```
 
-## Configure app
+## تكوين التطبيق
 
-- Now you have to create a file named as ```.env``` that contains the database link to connect to mongoose and just save it and you are good to go.
+- يجب إنشاء ملف باسم .env يحتوي على رابط قاعدة البيانات للاتصال بـ mongoose و قم بحفظه.
 
-## Running the project
+## تنفيذ المشروع
 
 ```
 npm start
@@ -71,7 +49,7 @@ npm start
 
 ---
 
-## App Structure
+## هيكل التطبيق
 
 ```
 /app.js - This is the main of the app having code of all the API's and app formation and listening and DB connection
@@ -81,12 +59,12 @@ npm start
 ```
 ---
 
-## API Format
+## تنسيق Api
 
 ```
-The REST API endpoint is '/api/translate/'
+نقطة نهاية واجهة برمجة التطبيقات REST هي '/api/translate/'
 
-And the format of data to be send via the API in the body of API
+وتنسيق البيانات التي إرسالها عبر واجهة برمجة التطبيقات في نص واجهة برمجة التطبيقات.
 
 {
     "to" : "chinese simplified",
@@ -99,8 +77,3 @@ where 'to' is the target language
       'text' is the data to be translated. 
 
 ```
-## Demonstration
-
-### For successful request
-![](https://github.com/mostlypanda/Text-Translator-using-Nodejs/blob/main/Assets/API%20Working.png)
-
